@@ -171,6 +171,12 @@ html, body {
    .row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     }
+
+    .favourites {
+        display: flex;
+        flex-direction: row;
+        padding: 50px;
+        justify-content: space-between;
      
+        }
