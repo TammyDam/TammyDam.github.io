@@ -7,7 +7,7 @@ html, body {
   
   html {
     font-size: 10px;
-    background-color:rgb(151, 248, 235);
+    background-color: #a9a9a9;
   }
   
   body {
@@ -57,7 +57,7 @@ html, body {
   }
   
   body > * {
-    background-color: rgb(67, 120, 190);
+    background-color: red;
     padding: 1%;
   }
   
@@ -136,49 +136,3 @@ html, body {
   footer {
     margin-top: 10px;
   }
-
-  .header img {
-    height: 100px;
-    width: 100px;
-   }
-    
-   .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-   }
-
-   ul li {
-    display: inline;
-    padding: 50px;
-   }
-
-   .container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-   }
-
-   .row {
-    display: flex;
-    justify-content: space-between;
-    }
-
-    .favourites {
-        display: flex;
-        flex-direction: row;
-        padding: 50px;
-        justify-content: space-between;
-     
-        }
-
-    aside {
-        width: 40%;
-        padding-left: .5rem;
-        margin-left: 5rem;
-        float: right;
-        box-shadow: inset;
-        font-style: italic;
-        color:#99FFF1;
-    }
