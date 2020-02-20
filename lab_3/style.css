@@ -133,6 +133,8 @@ html, body {
   
   aside img {
     max-width: 100%;
+    width: 120px;
+    height: 120px;
   }
   
   footer {
