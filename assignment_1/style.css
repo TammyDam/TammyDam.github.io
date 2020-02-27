@@ -11,6 +11,8 @@ html {
 body {
     width: 100%;
     margin: 0;
+    background-color: #FFDB7A;
+    padding-bottom: 25px;
   }
 
 /* || Headings */
@@ -19,11 +21,10 @@ body {
     background-color: #C9D6FF;
     margin-bottom: 10px;
     padding: 15px;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    flex-flow: row wrap;
+    flex-direction: row wrap;
     justify-content: space-between; 
 }
 
@@ -33,21 +34,23 @@ h1 {
     font-size: 50px; 
     justify-content: space-around; 
     padding: 15px;
+
 } 
 
 h2 { 
     margin: 0; 
     margin-bottom: 10px;
     font-size: 50px;
+    text-align: center;
 }
 
 /* || Class One */
 .one {
     display: flex;
     flex-wrap: wrap;
-    background-color: #FFDB7A;
     border-radius: 4px;
     padding: 15px;
+    width: 200px;
 }
 
 .one img{
@@ -57,6 +60,7 @@ h2 {
     border-style: solid;
     border-color: #C2B48F;
     border-radius: 1px;
+
 }
 
 .one p {
@@ -75,7 +79,7 @@ h2 {
 .two{
     display: flex;
     flex-wrap: wrap;
-    font-size: 200px;
+    font-size: 20px;
     font-family: 'Lobster Two';
     font-weight: lighter;
     padding: 15px;
@@ -83,7 +87,7 @@ h2 {
     border-style: dashed;
     border-color: #C2B48F;
     border-radius: 4px;
-
+    flex: 0 1 auto;
 }
 
 .jobtitle{ 
@@ -118,36 +122,19 @@ ol {
 /* || Other Stuff */
 .container {
     display: flex;
-    justify-content: center;
-    align-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 960px;
 }
 
 .wrapper {
     display: flex;
     text-align: left;
-    padding: 15px;
-    padding-bottom: 15px;
-    background-color: #FFDB7A;
     flex-wrap: wrap;
-    flex-direction: row;
-    flex: 0 1 auto;
-}
-
-.div { 
-    max-width: 960px;
-}
-
-/* || Class Notes 
-div > p .header     display:flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 0px;
-    margin: 0px;
-    flex: 0 1 auto;
-    background: 1px;
-    width: 80%;
-    margin-right: 15px;*/
+}
+
 
 @media screen and (max-width: 1000px) {
 .container{ 
@@ -155,7 +142,6 @@ div > p .header     display:flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
-
 }
 }
 
