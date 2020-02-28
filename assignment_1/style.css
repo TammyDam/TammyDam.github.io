@@ -49,8 +49,9 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     border-radius: 4px;
+    padding: 15px;
     padding-right: 15px;
-    width: 200px;
+    width: 10px;
 }
 
 .one img{
@@ -71,7 +72,6 @@ h2 {
     padding: 15px;
     text-align:left;
     align-items: center;
-    margin-bottom: 0 1 auto;
 }
 
 /* || Class Two */
