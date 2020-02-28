@@ -46,6 +46,9 @@ h2 {
 
 /* || Class One */
 .one { 
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
 }
 
 .one img{
