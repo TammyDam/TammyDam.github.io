@@ -13,6 +13,7 @@
           Click me to make a change
         </button>
         <div class="content">
+          <div class="gibberish">
           <p>
             Retro fan narwhal hoodie megging viral bushwick yr chartreuse.
             Chartresuse seitan banh mi selfies, woke ennui venmo craft beer. Air
@@ -21,29 +22,37 @@
             lo-fi.
           </p>
         </div>
+        <div class=paragraph></div>
+        </div>
         <div class="footer"></div>
       </div>
     </div>
     <script>
       function clickMe() {
-        const content = document.querySelector(".content");
-        content.innerHTML = "Hello world";
-      
-        const title = document.querySelector(".header");
-        new_title.innerHTML = name + "'s Lab 4";
-
-        const greeting = document.querySelector(".greeting");
-        greeting.innerHTML = "My name has" + a + "characters." + "<br />" + "<br /v"; 
-
         let name = "Tammy Dam";
         let a = name.length;
         let b = name.charAt(2);
-        let c = name.slice(a-3,a);
-        let d = name.substring(0,5);
-        let e = name.substring(6,9);
+        let c = name.slice(a-3, a);
+        let d = name.substring(0, 5);
+        let e = name.substring(6, 9);
+        let ff = d.length + e.length;
+
+        const title = document.querySelector(".header");
+        new_title.innerHTML = name + "'s Lab 4" + ff;
 
 
+        const gibberish = document.querySelector(".gibberish");
+        gibberish.innerHTML =
+          "Hello World" + "<br />" + "My name has " + a + "characters." + "<br />" + "<br />";
+
+        const paragraph = document.querySelector(".paragraph");
+        paragraph.innerHTML =
+          "The third character of my name is " +
+          change.toUpperCase() +
+          ". The last three characters of my last name are " +
+          change.toLowerCase();
       }
+      
     </script>
   </body>
 </html>
