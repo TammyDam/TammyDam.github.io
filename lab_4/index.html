@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Prof A's Demo Page</title>
+    <div class="new_name"><title>Prof A's Demo Page</title></div>
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
 
@@ -37,13 +37,12 @@
         let e = name.substring(6, 9);
         let ff = d.length + e.length;
 
-        const title = document.querySelector(".header");
-        new_title.innerHTML = name + "'s Lab 4" + ff;
-
+        const new_name = document.querySelector(".header");
+        new_name.innerHTML = name + "'s Lab 4" + ff;
 
         const gibberish = document.querySelector(".gibberish");
         gibberish.innerHTML =
-          "Hello World" + "<br />" + "My name has " + a + "characters." + "<br />" + "<br />";
+          "Hello World" + "<br />" + "My name has " + a + " characters." + "<br />" + "<br />";
 
         const paragraph = document.querySelector(".paragraph");
         paragraph.innerHTML =
