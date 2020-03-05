@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Prof A's Demo Page</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Prof A's Demo Page</div>
+        <button class="button" onclick="clickMe()">
+          Click me to make a change
+        </button>
+        <div class="content">
+          <p>
+            Retro fan narwhal hoodie megging viral bushwick yr chartreuse.
+            Chartresuse seitan banh mi selfies, woke ennui venmo craft beer. Air
+            plant tumeric retro DIY iPhone poutine. +1 gastropub chillwave,
+            cronut glossier pork belly tacos new level fanny pack vegan jianbing
+            lo-fi.
+          </p>
+        </div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <script>
+      function clickMe() {
+        const content = document.querySelector(".content");
+        content.innerHTML = "Hello world";
+      
+        const title = document.querySelector(".header");
+        new_title.innerHTML = name + "'s Lab 4";
+
+        let name = "Tammy Dam";
+        let a = name.length;
+        let b = name.charAt(2);
+        let c = name.slice(a-3,a);
+        let d = name.substring(0,5);
+        let e = name.substring(6,9);
+
+      }
+    </script>
+  </body>
+</html>
