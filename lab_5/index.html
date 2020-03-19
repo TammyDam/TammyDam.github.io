@@ -3,22 +3,65 @@
 <html lang="en">
 
 <head>
-  <title>Test JSON page</title>
+  <title>Tammy Dam's List of Countries</title>
   <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 
 <body>
   <div class="container">
     <div class="wrapper">
-      <div class="header">Test JSON page</div>
-      <button class="activate">Click me to replace list
+      <div class="header">Test JSON Page</div>
+      <button class="activate" onclick="randomcountries();">Click me to replace list
         entries</button>
       <div class="content">
+          <ol class="countries"> </ol>
       </div>
       <div class="footer"></div>
     </div>
   </div>
   <script>
+
+const header = document.querySelector(".header");
+    header.innerHTML = "Tammy Dam's List of Countries";
+
+    ol_list.className = "countries";
+
+    function randomcountries(){
+      const content = document.querySelector(".content");
+      var country_list = [];
+      var unselected = [];
+      var ol_list = document.createElement("ol");
+      ol_list.setAttribute('class','countries');
+      unselected = [...countries];
+      for (i = 0; i < 25; i++) {
+        var random_num = Math.floor(Math.random()*(countries.length));
+        var completed = false;
+        while(!done){
+          country = countries[random_int];
+          if (country_list.includes(country)){
+            random_num = Math.floor(Math.random()*(countries.length));
+            console.log("Found duplicate, countries[random_num");
+          }
+          else{
+            country_list.push(country);
+            unselected.splice(unselected.indexOf(country), 1);
+            completed = true;
+          }
+        }
+      }
+
+      country_list = country_list.sory((a,b) => (first.name > second,name) ? 1 : -1);
+      country_list.forEach(add_countries);
+      console.log("Unselected countries: ", unselected);
+      }
+
+      function add_countries(item){
+        var entry_list = document.createElement("li");
+        var inject_list = document.querySelector('.countries');
+        entry_list.innerHTML = "<strong>" + item.code + "</strong>" + item.name;
+      }
+
+
     /* N.B. - For your lab, use the variable "countries" now available on the window space */
     const countries = [
       { "name": "Afghanistan", "code": "AF" },
@@ -270,3 +313,6 @@
 </body>
 
 </html>
+
+
+
