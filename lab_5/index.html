@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-  <title>Tammy Dam's List of Countries</title>
+  <title>Tammy Dam's Lab 5</title>
   <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 
 <body>
   <div class="container">
     <div class="wrapper">
-      <div class="header">Test JSON Page</div>
-      <button class="activate" onclick="randomcountries();">Click me to replace list
+      <div class="header">Tammy Dam's List of Countries</div>
+      <button class="activate" onclick="random_countries();">Click me to replace list
         entries</button>
       <div class="content">
           <ol class="countries"> </ol>
@@ -20,13 +20,8 @@
     </div>
   </div>
   <script>
-
-const header = document.querySelector(".header");
-    header.innerHTML = "Tammy Dam's List of Countries";
-
-    ol_list.className = "countries";
-
-    function randomcountries(){
+    
+    function random_countries(){
       const content = document.querySelector(".content");
       var country_list = [];
       var unselected = [];
@@ -59,6 +54,7 @@ const header = document.querySelector(".header");
         var entry_list = document.createElement("li");
         var inject_list = document.querySelector('.countries');
         entry_list.innerHTML = "<strong>" + item.code + "</strong>" + item.name;
+        inject_list.appendChild(entry_list);
       }
 
 
