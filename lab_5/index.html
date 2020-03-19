@@ -20,15 +20,16 @@
     </div>
   </div>
   <script>
-    
+
     function random_countries(){
       const content = document.querySelector(".content");
       var country_list = [];
       var unselected = [];
       var ol_list = document.createElement("ol");
       ol_list.setAttribute('class','countries');
+      content.replaceChild(ol_list, content.childNodes[1]);
       unselected = [...countries];
-      for (i = 0; i < 25; i++) {
+      for (i = 0; i < 25; ++i) {
         var random_num = Math.floor(Math.random()*(countries.length));
         var completed = false;
         while(!done){
