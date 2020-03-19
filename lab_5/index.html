@@ -32,11 +32,11 @@
       for (i = 0; i < 25; ++i) {
         var random_num = Math.floor(Math.random()*(countries.length));
         var completed = false;
-        while(!done){
+        while(!completed){
           country = countries[random_int];
           if (country_list.includes(country)){
             random_num = Math.floor(Math.random()*(countries.length));
-            console.log("Found duplicate, countries[random_num");
+            console.log("Found duplicate", countries[random_num]);
           }
           else{
             country_list.push(country);
