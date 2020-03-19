@@ -14,7 +14,17 @@
       <button class="button" onclick="random_countries()">Click me to replace list
         entries</button>
       <div class="content">
-          <ol class="countries"> </ol>
+          <ul class="stuff">
+            <li> At the click of the button above</li>
+            <li> Replace this list with an ordered list</li>
+            <li> 25 random countries will be selected everytime you click the button above</li>
+            <li> The list of countries should change, hopefully</li>
+            <ol>
+              <li> Use injections</li>
+              <li> Explore MDN for possible solutions</li>
+              <li> Fun list must include forEach or a map function</li>
+            </ol>
+            </ul>
       </div>
       <div class="footer"></div>
     </div>
@@ -25,7 +35,7 @@
       const content = document.querySelector(".content");
       var country_list = [];
       var unselected = [];
-      var ol_list = document.createElement("ol");
+      var ol_list = document.createElement("ol_list");
       ol_list.setAttribute('class','countries');
       content.replaceChild(ol_list, content.childNodes[1]);
       unselected = [...countries];
@@ -33,12 +43,12 @@
         var random_num = Math.floor(Math.random()*(countries.length));
         var completed = false;
         while(!completed){
-          country = countries[random_int];
+          country = countries[random_num];
           if (country_list.includes(country)){
             random_num = Math.floor(Math.random()*(countries.length));
             console.log("Found duplicate", countries[random_num]);
           }
-          else{
+          else {
             country_list.push(country);
             unselected.splice(unselected.indexOf(country), 1);
             completed = true;
@@ -46,7 +56,7 @@
         }
       }
 
-      country_list = country_list.sort((a,b) => (first.name > second.name) ? 1 : -1);
+      country_list = country_list.sort((a,b) => (a.name > b.name) ? 1 : -1);
       country_list.forEach(add_countries);
       console.log("Unselected countries: ", unselected);
       }
