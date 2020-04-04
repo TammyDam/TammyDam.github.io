@@ -21,25 +21,6 @@
             height: 480px;
             position: absolute;
         }
-        .map {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      height: 100%;
-      width: 75%;
-      float: left;
-      z-index: -1;
-    }
-    .table {
-      position: relative;
-      height: 100%;
-      float: right;
-      width: 25%;
-      z-index: 0;
-    }
-       
     </style>
   </head>
 
@@ -48,18 +29,19 @@
       <div class="wrapper">
         <div class="header">Frontend Libraries: Maps Lab</div>
         <div class="content">
-            <div id="map1"></div>
-            <div id='table'></div>
+            When your lab is done this should be replaced with a stylistic map.
+            <div id="map1" style= "width: 600px; height: 200px; position: relative;"
+            class= "leaftlet-container leaflet-fade-anim leaflet-grab leaflet touch-drag"
+            tableindex= "0">
         </div>
         <div class="footer">Make some markers work!</div>
       </div>
     </div>
-    <script>
-
+<script>
 
 
         /* Your lab code can go here, or in an external file you include */
-        var mymap= L.map("map1").setView([0, 0], 13);
+        var mymap= L.map("map1").setView([51.505, -0.09], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
@@ -74,11 +56,11 @@
         polygon.bindPopup("I am a polygon.");
 
         var popup = L.popup()
-            .setLatLng([51.5, -0.09])
+            .setLatLng([38.9881, -76.9416])
             .setContent("I am a standalone popup.")
             .openOn(mymap);
 
-        var circle = L.circle([51.508, -0.11], {
+        var circle = L.circle([38.9881, -76.9416], {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
@@ -86,9 +68,9 @@
         }).addTo(mymap);
 
         var polygon = L.polygon([
-            [51.509, -0.08],
-            [51.503, -0.06],
-            [51.51, -0.047]
+            [38.9881, -76.9416],
+            [38.9881, -76.9416],
+            [38.9881, -76.9416]
         ]).addTo(mymap);
 
     </script>
