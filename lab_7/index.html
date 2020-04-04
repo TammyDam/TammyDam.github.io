@@ -35,6 +35,22 @@
 var mymap = L.map('mapid').setView([38.9860, -76.9451], 20);
 
 
+var marker = L.marker([38.9860, -76.9451]).addTo(mymap);
+
+var marker2 = L.marker([-76.898376,39.096737]).addTo(mymap);
+
+var marker3 = L.marker ([-76.892104,38.909337]).addTo(mymap);
+
+var marker4 = L.marker ([-76.873761,38.903501]).addTo(mymap);   
+
+
+var PG_list = []
+var PG_list = [
+    [-76.838165,39.095491, 'pop1', 'location1'],
+    [-76.892104,38.909337, 'pop2', 'location2'],
+    [-76.873761,38.903501, 'pop3', 'location3']
+];
+
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', 
     {
         maxZoom: 18,
@@ -46,7 +62,7 @@ var mymap = L.map('mapid').setView([38.9860, -76.9451], 20);
         zoomOffset: -1
     }).addTo (mymap);
    
-    marker.bindPopup("<b>Hello Fellow Grader!</b><br>I am a 1/1,000,000 crying Terp from McKeldin Library.").openPopup();
+    marker.bindPopup("<u><b>Hello Fellow Grader!</b></u><br>I am a 1/1,000,000 crying Terp from McKeldin Library.").openPopup();
        
        </script>
     </body>
