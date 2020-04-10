@@ -17,48 +17,48 @@
     </div>
     <script>
       fetch(' https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
-      .then((data) => {
-          console.log("info", data);
-          return data;
+      .then((pgdata) => {
+          console.log("info", pgdata);
+          return pgdata;
       })
       
       .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
       .then((data) => {           
  // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
 
-      console.log(data);
-      const intData = data.filter((s) => s.geocoded_column_1);
-      const sorted = intData.map((m) => ({
-          category: m.category,
+    console.log(data);
+    const intData = data.filter((s) => s.geocoded_column_1);
+    const sorted = intData.map((m) => ({
+    output: m.category,
       }));
  // <- this will pass the data to the next "then" statement when I'm ready.
       console.log(sorted);
       return sorted;
       })
       
-      .then ((data) => {
-          return data.reduce((result, current) => {
-
-          if (!result[current.result]) {
-              result[current.result] = [];
-          } else {
-              result[current.result].push(current);
-          return result;
+      .then((data) => {
+          return data.reduce((output, category) => {
+            if (!output[category.output]) {
+              output[category.output] = 1;
+            } else {
+              output[category.output]++;
+            }
+            return output;
           }, {});
-      })
-      
+        })
     .then ((data) => {
-        console.log('formattedData', data);
-        const reformattedData = Object.entries(data).map((m, a) => {
-            console.log(m);
+        let reformattedData = Object.entries(data).map((m, a) => {
             return {
                 y: m[1],
                 label: m[0],
             };
         });
-      
-
-
+            return reformattedData;
+    })
+    
+    .then((reformattedData) => {
+        let content = document.getElementsByClassName("content")[0];
+        content.innerHTML = " ";
 
         let chart = new CanvasJS.Chart(content, {
             animationEnabled: true,
@@ -71,7 +71,7 @@
             data: [
               {
                 type: "pie",
-                dataPoints: ,
+                dataPoints: reformattedData,
               },
             ],
           });
