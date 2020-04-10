@@ -25,6 +25,7 @@ body {
     right: 0;
     left: 0;
     display: flex;
+    justify-content: center;
     align-items: flex-start;
     font-family: Helvetica, Geneva, Tahoma, sans-serif;
   }
@@ -68,11 +69,12 @@ body {
   .content {
     background: #fff;
     border: 2px dotted #444;
-    align-self: flex-start;
     width: 85%;
     padding: 10px;
     overflow-wrap: break-word;
     margin: 25px 50px;
+    flex-grow: 1;
+    flex: 0 0 100px;
   }
   
   .activate {
