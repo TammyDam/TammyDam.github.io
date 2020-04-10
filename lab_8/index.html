@@ -24,11 +24,12 @@
         })
         
         .then((data)) => {
-            return data.reduce((a, b)) => {
+            return data.reduce(function(a, b) => {            
+        })
 
-            }
-        }
-    
+
+
+window.onload = function() {
 
 var char = new CanvasJS.Chart("chartContainer", {
     exportEnabled: true,
@@ -49,7 +50,8 @@ var char = new CanvasJS.Chart("chartContainer", {
 	}]
 });
 chart.render();
-
+}
+});
 
     </script>
   </body>
