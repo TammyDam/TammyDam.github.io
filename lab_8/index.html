@@ -17,15 +17,40 @@
     </div>
     <script>
       fetch(' https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
-      .then((response) => {
-        console.log("response information", response);
-        return response;
-      })
       .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
         .then((data) => { // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
           console.log(data);
-          // return data; // <- this will pass the data to the next "then" statement when I'm ready.
+          return data     // <- this will pass the data to the next "then" statement when I'm ready.
         })
+        
+        .then((data)) => {
+            return data.reduce((a, b)) => {
+
+            }
+        }
+    
+
+var char = new CanvasJS.Chart("chartContainer", {
+    exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "Let's Go Eat"
+    },
+    legend: {
+        cursor: "pointer",
+        itemclicker: explodePie
+    },
+    data: [{
+        type: "pie",
+        showInLegend: true,
+        toolTipContent: "{name}: <strong>{y}%</strong>",
+		indexLabel: "{name} - {y}%",
+		dataPoints: data
+	}]
+});
+chart.render();
+
+
     </script>
   </body>
 </html>
