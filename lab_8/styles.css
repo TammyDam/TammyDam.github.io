@@ -2,9 +2,9 @@
 body {
     line-height: 1.6;
     font-size: 18px;
-    color: #444;
+    color: black;
     padding: 0 10px;
-    background: #eee;
+    background: lightblue;
   }
   
   h1,
@@ -39,7 +39,7 @@ body {
     flex-direction: column;
     align-items: center;
     background: #fefefe;
-    border: 1px dashed #ccc;
+    border: 1px dashed black;
     margin: 25px;
   
   }
@@ -68,7 +68,7 @@ body {
   
   .content {
     background: #fff;
-    border: 2px dotted #444;
+    border: 2px dotted black;
     width: 85%;
     padding: 10px;
     overflow-wrap: break-word;
