@@ -31,12 +31,12 @@
       const sorted = intData.map((m) => ({
           category: m.category,
       }));
-
+ // <- this will pass the data to the next "then" statement when I'm ready.
       return sorted;
       })
       
       .then ((data) => {
-          return data.reduce((result, current) =>
+          return data.reduce((result, current) => {
 
           if (!result[current.category]) {
               category[current.category] = 1;
