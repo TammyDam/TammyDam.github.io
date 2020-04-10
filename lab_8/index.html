@@ -16,39 +16,16 @@
       </div>
     </div>
     <script>
-        window.onload = function () {
-        
-        var chart = new CanvasJS.Chart("chartContainer", ) {
-            exportEnabled: true,
-	animationEnabled: true,
-	title:{
-		text: "State Operating Funds"
-	},
-	legend:{
-		cursor: "pointer",
-		itemclick: explodePie
-	},
-	data: [{
-		type: "pie",
-		showInLegend: true,
-		toolTipContent: "{name}: <strong>{y}%</strong>",
-		indexLabel: "{name} - {y}%",
-		
-	}]
-});
-chart.render();
-}
-
-function explodePie (e) {
-	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
-		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
-	} else {
-		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
-	}
-	e.chart.render();
-
-}
+      fetch(' https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
+      .then((response) => {
+        console.log("response information", response);
+        return response;
+      })
+      .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
+        .then((data) => { // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
+          console.log(data);
+          // return data; // <- this will pass the data to the next "then" statement when I'm ready.
+        })
     </script>
   </body>
 </html>
-
