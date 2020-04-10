@@ -18,8 +18,8 @@
     <script>
       fetch(' https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
       .then((data) => {
-          console.log("info", output);
-          return output;
+          console.log("info", data);
+          return data;
       })
       
       .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
@@ -32,36 +32,55 @@
           category: m.category,
       }));
  // <- this will pass the data to the next "then" statement when I'm ready.
+      console.log(sorted);
       return sorted;
       })
       
       .then ((data) => {
           return data.reduce((result, current) => {
 
-          if (!result[current.category]) {
-              category[current.category] = 1;
+          if (!result[current.result]) {
+              result[current.result] = [];
           } else {
-              category[current.category]++;
-
-          }
-          }
-      }
+              result[current.result].push(current);
+          return result;
+          }, {});
+      })
       
+    .then ((data) => {
+        console.log('formattedData', data);
+        const reformattedData = oBject.entried(data).map((m, a) => {
+            console.log(m);
+            return {
+                y: m[1],
+                label: m[0],
+            };
+        });
       
-   
 
 
 
+        let chart = new CanvasJS.Chart(content, {
+            animationEnabled: true,
+            height: 480,
+            width: 1000,
+            
+            title: {
+              text: "PG County Food Safety Dataset",
+            },
+            data: [
+              {
+                type: "pie",
+                dataPoints: ,
+              },
+            ],
+          });
+          chart.render();
+        });
+    </script> 
+  </body>
+</html>
 
-<!-- 
-    References:
 
-    https://www.youtube.com/watch?v=g1C40tDP0Bk
 
-    https://www.youtube.com/watch?v=t4MOEfpsC60
-
-    https://canvasjs.com/javascript-charts/pie-chart-legends/
-
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
-
--->
+//    References: www.youtube.com/watch?v=g1C40tDP0Bk, www.youtube.com/watch?v=t4MOEfpsC60, www.canvasjs.com/javascript-charts/pie-chart-legends/, www.developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
