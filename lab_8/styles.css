@@ -69,12 +69,15 @@ body {
   .content {
     background: #fff;
     border: 2px dotted black;
-    width: 85%;
+    width: 88%;
     padding: 10px;
     overflow-wrap: break-word;
+    display: flex;
+    align-self: flex-start;
     margin: 25px 50px;
+    overflow-wrap: break-word;
     flex-grow: 1;
-    flex: 0 0 100px;
+    flex: 0 0 500px;
   }
   
   .activate {

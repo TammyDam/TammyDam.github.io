@@ -37,9 +37,9 @@
       .then((data) => {
           return data.reduce((output, category) => {
             if (!output[category.output]) {
-              output[category.output] = 1;
+              output[category.output] = [];
             } else {
-              output[category.output]++;
+              output[category.output].push(category);
             }
             return output;
           }, {});
@@ -47,7 +47,7 @@
     .then ((data) => {
         let reformattedData = Object.entries(data).map((m, a) => {
             return {
-                y: m[1],
+                y: m[1].length,
                 label: m[0],
             };
         });
