@@ -30,8 +30,19 @@ function processDataForFrontEnd(req, res) {
   fetch(baseURL)
     .then((r) => r.json())
     .then((data) => {
-      const result = data.reduce((output, category) => {
+      console.log(data);
+      const intData = data.filter((s) => s.geocoded_column_1);
+      const sorted = intData.map((m) => ({
+        output: m.category,
+      }));
+      // <- this will pass the data to the next "then" statement when I'm ready.
+      console.log(sorted);
+      return sorted;
+    })
 
+
+    .then((data) => {
+      return data.reduce((output, category) => {
         if (!output[category.output]) {
           output[category.output] = [];
         } else {
@@ -40,7 +51,9 @@ function processDataForFrontEnd(req, res) {
         return output;
       }, {});
     })
-    .then ((data) => {
+
+
+    .then((data) => {
       let reformattedData = Object.entries(data).map((m, a) => {
         return {
           y: m[1].length,
@@ -55,6 +68,8 @@ function processDataForFrontEnd(req, res) {
       console.log(data);
       res.send({ data: data }); // here's where we return data to the front end
     })
+
+    
     .catch((err) => {
       console.log(err);
       res.redirect('/error');
