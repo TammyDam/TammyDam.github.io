@@ -27,16 +27,16 @@ function processDataForFrontEnd(req, res) {
   // Your Fetch API call starts here
   // Note that at no point do you "return" anything from this function -
   // it instead handles returning data to your front end at line 34.
-    fetch(baseURL)
-      .then((r) => r.json())
-      .then((data) => {
-        console.log(data);
-        res.send({ data: data }); // here's where we return data to the front end
-      })
-      .catch((err) => {
-        console.log(err);
-        res.redirect('/error');
-      });
+  fetch(baseURL)
+    .then((r) => r.json())
+    .then((data) => {
+      console.log(data);
+      res.send({ data: data }); // here's where we return data to the front end
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect('/error');
+    });
 }
 
 // This is our first route on our server.
