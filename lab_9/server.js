@@ -20,15 +20,37 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-
 function processDataForFrontEnd(req, res) {
-  const baseURL = 'https://data.princegeorgescountymd.gov/Health/Food-Inspection/umjn-t2iz'; // Enter the URL for the data you would like to retrieve here
+  // eslint-disable-next-line max-len
+  const baseURL = 'https://data.princegeorgescountymd.gov/Health/Food-Inspection/umjn-t2iz'; // URL for the data you would like to retrieve here
 
   // Your Fetch API call starts here
   // Note that at no point do you "return" anything from this function -
   // it instead handles returning data to your front end at line 34.
   fetch(baseURL)
     .then((r) => r.json())
+    .then((data) => {
+      const result = data.reduce((output, category) => {
+
+        if (!output[category.output]) {
+          output[category.output] = [];
+        } else {
+          output[category.output].push(category);
+        }
+        return output;
+      }, {});
+    })
+    .then ((data) => {
+      let reformattedData = Object.entries(data).map((m, a) => {
+        return {
+          y: m[1].length,
+          label: m[0],
+        };
+      });
+      return reformattedData;
+    })
+
+
     .then((data) => {
       console.log(data);
       res.send({ data: data }); // here's where we return data to the front end
@@ -41,7 +63,7 @@ function processDataForFrontEnd(req, res) {
 
 // This is our first route on our server.
 // To access it, we can use a "GET" request on the front end
-// by typing in: localhost:3000/api or 127.0.0.1:3000/api
+// by typing in: localhost:3000/api or 127.0.0.1:3000/api in a new tab in the browser
 app.get('/api', (req, res) => {processDataForFrontEnd(req, res)});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
