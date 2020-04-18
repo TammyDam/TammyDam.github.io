@@ -4,6 +4,7 @@
 <head>
   <title>Replace Me With Your Lab Page</title>
   <link rel="stylesheet" type="text/css" href="./styles.css">
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 
 <body>
@@ -16,10 +17,28 @@
   </div>
   <script>
     fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         // Here's where your chart code should go.
-      })
+    
+
+        const chart = new CanvasJS.Chart(content, {
+          animationEnabled: true,
+          height: 480,
+          width: 960,
+    
+          title: {
+            text: 'PG County Food Safety Dataset'
+          },
+          data: [
+            {
+              type: 'pie',
+              dataPoints: reformattedData
+            }
+          ]
+        });
+        chart.render();
+      });
   </script>
 </body>
 
