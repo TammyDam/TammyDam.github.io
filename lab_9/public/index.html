@@ -11,11 +11,14 @@
   <div class="container">
     <div class="wrapper">
       <div class="header">Replace Me With Your Lab Page</div>
-      <div class="content"></div>
+      <div class="content">
+        <div id="chartContainer" style="height:480px; width:960px;"></div>
+      </div>
       <div class="footer"></div>
     </div>
   </div>
   <script>
+    
     fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
       .then((res) => res.json())
       .then((res) => {
