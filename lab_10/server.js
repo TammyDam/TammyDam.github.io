@@ -43,7 +43,8 @@ function processDataForFrontEnd(req, res) {
 // Syntax change - we don't want to repeat ourselves,
 // or we'll end up with spelling errors in our endpoints.
 //
-app.route("/api")
+app
+  .route("/api")
   .get((req, res) => {
     // processDataForFrontEnd(req, res)
     (async () => {
@@ -52,6 +53,10 @@ app.route("/api")
       console.log("Expected result", result);
       res.json(result);
     })();
+  })
+  .put((req,res) => {
+      console.log("/api put request", req.body);
+      res.send("Successfully working...hopefully");
   })
   .post((req, res) => {
     console.log("/api post request", req.body);
@@ -73,4 +78,3 @@ app.route("/api")
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
-new Array
