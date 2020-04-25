@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Methods - Post and Put Lab</title>
+    <title>Tammy Dam's Methods - Post and Put Lab</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
     <div class="wrapper">
       <div class="container">
         <div>
-          <h1 class="header">POST and PUT lab - with Fetch</h1>
+          <h1 class="header">Tammy Dam's POST and PUT lab - with Fetch</h1>
         </div>
         <div>
           <form class="targetForm" id="labForm">
@@ -53,7 +53,15 @@
 
       function getReq(r) {
         r.preventDefault();
-        const
+        fetch("/api")
+           .then (res => res.json())
+           .then(res => {
+               console.log(res);
+               const ol = document.createElement("OL");
+               ol = document.createElement("OL");
+               ol.className = "SQL";
+               document.querySelector(".container").appendChild(ol);
+            })
       }
 
 

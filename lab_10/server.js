@@ -9,7 +9,7 @@ import fetch from "node-fetch";
 import sqlite3 from "sqlite3";
 import { open } from "sqlite";
 import writeUser from "./libraries/writeuser";
-
+import getUsers from "./libraries/getUsers";
 const dbSettings = {
   filename: "./tmp/database.db",
   driver: sqlite3.Database,
