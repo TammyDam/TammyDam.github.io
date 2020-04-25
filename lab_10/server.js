@@ -43,8 +43,7 @@ function processDataForFrontEnd(req, res) {
 // Syntax change - we don't want to repeat ourselves,
 // or we'll end up with spelling errors in our endpoints.
 //
-app
-  .route("/api")
+app.route("/api")
   .get((req, res) => {
     // processDataForFrontEnd(req, res)
     (async () => {
@@ -63,7 +62,7 @@ app
       writeUser(req.body.name, dbSettings)
       .then((result) => {
         console.log(result);
-        res.send("your request was successful"); // simple mode
+        res.send("sent"); // simple mode
       })
       .catch((err) => {
         console.log(err);
@@ -74,3 +73,4 @@ app
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
+new Array
