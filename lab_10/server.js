@@ -55,9 +55,21 @@ app
     })();
   })
   .put((req,res) => {
-      console.log("/api put request", req.body);
-      res.send("Successfully working...hopefully");
-  })
+    console.log("/api put request", req.body);
+    if (!req.body.name) {
+      console.log(req.body);
+      res.status("418").send("something went wrong, additionally i am a teapot");
+    } else {
+      writeUser(req.body.name, dbSettings)
+      .then((result) => {
+        console.log(result);
+        res.send("Successfully worked...hopefully"); // simple mode
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+  });
   .post((req, res) => {
     console.log("/api post request", req.body);
     if (!req.body.name) {
