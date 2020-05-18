@@ -29,7 +29,9 @@
     <script>
       function sendForm(e) {
         e.preventDefault(); // this prevents your page reloading on button click
+        
         const target = document.querySelector("#labForm");
+        
         const btn = document.querySelector("#formBtn");
 
         const formToSend = new FormData(target);
@@ -41,29 +43,38 @@
           },
           body: JSON.stringify(Object.fromEntries(formToSend)),
         })
-          .then((data) => data.text())
-          .then((txtresponse) => {
-            console.log(txtresponse);
+          .then((data) => data.json())
+          .then((jresponse) => {
+            const txt = document.createElement("m")
+            txt.innerHTML = jresponse["text"]
+            target.append(txt)
+
             btn.setAttribute("disabled", true);
-            const br = document.createElement("br");
-            target.append(br);
-            target.append(`${txtresponse}`);
-          });
+          })
       }
 
       function getReq(r) {
         r.preventDefault();
-        fetch("/api")
-           .then (res => res.json())
-           .then(res => {
-               console.log(res);
-               const ol = document.createElement("OL");
-               ol = document.createElement("OL");
-               ol.className = "SQL";
-               document.querySelector(".container").appendChild(ol);
-            })
-      }
+        const target = document.querySelector("#labForm");
+        const btn = document.querySelector("#formBtn");
+        
+        fetch("/api") {
+          method: "Get"
+        })
+           .then ((data => data.json())
+           .then((jresponse) => {
+             btn.setAttribute("disabled", true);
 
+          const ol = document.createElement("ol");
+          target.append(ol);
+
+          for(i = 0; i < jresponse.length; i++){
+            const li = document.createElement("li");
+            li.innerHTML = jresponse[i]["name"];
+            ol.append(li);
+          }
+           })
+      }
 
       const formBtn = document.querySelector("#formBtn");
       formBtn.addEventListener("click", sendForm);
