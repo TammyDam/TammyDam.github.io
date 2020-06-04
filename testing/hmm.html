@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Form</title>
+    <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+    <form action = "index.php" method= "POST"></form>
+    <h1>
+        Form
+    </h1>
+    <p>
+        If you didn't see information pertaining to the contract you were looking for, please add it into the database by filling out this form!
+    </p>
+<form id="form" method="post" action="">
+        <label for="Status">Status</label>
+        <span class="Status"></span>
+        <select name="Status">
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+    </select>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div>
+            <label for="charge_code">Enter Zekiah's charge code</label>
+            <input type="text" name="charge_code" placeholder="12345.1123.12">
+        </div>
+
+        <br>
+        <br>
+        <div>
+            <label for="end_cust">Who was the end customer? </label>
+            <input type="text" name="end_cust" placeholder="End Customer">
+        </div>
+
+
+        <br>
+        <br>
+        <div>
+            <label for="p_name">What was the project name? </label>
+            <input type="text" name="p_name" placeholder="Project Name">
+        </div>
+
+
+        <br>
+        <br>
+        <div>
+        <label for="w_type">What was the type of work? </label>
+            <input type="text" name="w_type" placeholder="Work Type">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="prime">Who was the prime? </label>
+            <input type="text" name="prime" placeholder="Prime">
+        </div>
+
+
+        <br>
+        <br>
+        <div>
+        <label for="c_type">What was the category type? </label>
+            <input type="text" name="c_type" placeholder="Category Type">
+        </div>
+    
+
+        <br>
+        <br>
+        <div>
+        <label for="zekiah_pm">Who was the Zekiah PM? </label>
+            <input type="text" name="zekiah_pm" placeholder="Zekiah PM">
+        </div>
+
+
+        <br>
+        <br>
+        <div>
+        <label for="fname">HAVE TO ADD ONE BY ONE TEAM MEMBERS</label>
+            <input type="text" name="team_members" placeholder="Team Members">
+        </div>
+
+
+        <br>
+        <br>
+        <div>
+            <label for="amount">When did the full contract start?
+                <br>
+                <small><i>
+                    (Enter date as Month / Day / Year)
+                </br>
+                </small></i>
+            </label>
+            <input type="date" id="start_date" placeholder="Month / Day / Year" />
+        </div>
+        
+        <br>
+        <br>
+        <div>
+            <label for="amount">When did the full contract end?
+                <br>
+                <small><i>
+                    (Enter date as Month / Day / Year)
+                </br>
+                </small></i>
+            </label>
+            <input type="date" id="end_date" placeholder="Month / Day / Year" />
+        </div>
+
+        <br>
+        <br>
+        <label for="contract_ceiling">What was the full contract ceiling amount? </label>
+        <div class="flex">
+            <span class="currency">$</span>
+            <input id="amount" type="text" data-type="currency" name="contract_ceiling" type="text" maxlength="15" placeholder="$1,000"/>
+        </div>
+
+        <br>
+        <br>
+        <label for="ceiling_remaining">What was the full contract ceiling remaining? </label>
+        <div class="flex">
+            <span class="currency">$</span>
+            <input id="amount" type="text" data-type="currency" name="ceiling_remaining" type="text" maxlength="15" placeholder="$1,000"/>
+        </div>
+
+        <br>
+        <br>
+        <div>
+            <label for="amount">Enter current POP start.
+                <br>
+                <small><i>
+                    (Enter date as Month / Day / Year)
+                </br>
+                </small></i>
+            </label>
+            <input type="date" id="pop_start" placeholder="Month / Day / Year" />
+        </div>
+
+
+        <br>
+        <br>
+        <div>
+            <label for="amount">Enter current POP end.
+                <br>
+                <small><i>
+                    (Enter date as Month / Day / Year)
+                </br>
+                </small></i>
+            </label>
+            <input type="date" id="pop_end" placeholder="Month / Day / Year" />
+        </div>
+
+        <br>
+        <br>
+
+
+        <label for="amount">Enter project's current funding.</label>
+        <div class="flex">
+            <span class="currency">$</span>
+            <input id="c_fund" type="text" data-type="currency" name="amount" type="text" maxlength="15" placeholder="$1,000"/>
+        </div>
+
+        <br>
+        <br>
+
+
+        <label for="amount">Enter the current funding available month start.</label>
+        <div class="flex">
+            <span class="currency">$</span>
+            <input id="m_start" type="text" data-type="currency" name="amount" type="text" maxlength="15" placeholder="$1,000"/>
+        </div>
+
+        <br>
+        <br>
+        <div>
+            <label for="amount">Enter end date per funding.
+                <br>
+                <small><i>
+                    (Enter date as Month / Day / Year)
+                </br>
+                </small></i>
+            </label>
+            <input type="date" id="e_fund" placeholder="Month / Day / Year" />
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="notes">Notes </label>
+            <input type="text" name="notes" placeholder="Notes">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="cust_num">Enter customer contract number.</label>
+            <input type="text" name="cust_num" placeholder="Customer Contract Number">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="par_veh">Enter parent vehicle.</label>
+            <input type="text" name="par_veh" placeholder="Parent Vehicle">
+        </div>
+        
+        <br>
+        <br>
+        <div>
+        <label for="">DD254????</label>
+            <input type="text" name="" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="">Set Aside?</label>
+            <input type="text" name="" placeholder="">
+        </div>
+
+
+        <br>
+        <br>
+        <div>
+        <label for="">TYPE</label>
+            <input type="text" name="" placeholder="TYPE">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="notes">Notes?</label>
+            <input type="text" name="more_notes" placeholder="Notes">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="con_name">Enter contracting name.</label>
+            <input type="text" name="con_name" placeholder="Name">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="con_num">Enter contracting phone number.</label>
+            <input type="text" name="con_num" placeholder="">
+        </div>
+
+
+        <br>
+        <br>
+        <div>
+        <label for="con_email">Enter contracting email.</label>
+            <input type="text" name="con_email" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="con_add">Enter contracting address.</label>
+            <input type="text" name="con_add" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="tech_name">Enter technical name.</label>
+            <input type="text" name="tech_name" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="tech_num">Enter technical phone number.</label>
+            <input type="text" name="tech_num" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="tech_email">Enter technical email.</label>
+            <input type="text" name="tech_email" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="desc">Enter description.</label>
+            <input type="text" name="desc" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="success">Describe the successes that occurred.</label>
+            <input type="text" name="success" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="tech_used">What technology was used?</label>
+            <input type="text" name="tech_used" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="pics">Pictures.</label>
+            <input type="text" name="pics" placeholder="">
+        </div>
+
+        <br>
+        <br>
+        <div>
+        <label for="w_doc">Word documents.UPLOAD AND UNSERT PHOTOS</label>
+            <input type="text" name="w_doc" placeholder="">
+        </div>
+
+
+        <div class="submit">
+            <br>
+            <br>
+            <input type="Submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

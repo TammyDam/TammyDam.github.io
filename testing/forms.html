@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="jquery-2.1.0.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        $(document).ready(function($){
+            $('#phone').mask("99", {placeholder:"XX"});
+        });
+    </script>
+</head>
+<body>
+    <div class = "submission-form">
+        <form>
+            <heading><h1>
+                <b><label for ="name">Submission Form</label></b></heading></h1>
+            <div>
+                <label for="Status"> Status</label>
+                <select id="Status">
+                <option value="Status">Select Status</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+                </div>
+             
+            <div>   
+                <label for="cc">Credit Card</label>
+                <input type="text" name="charge_code" placeholder="12345.123.12">
+                <input id="cc" type="text" data-inputmask="'mask': '9999 9999 9999 9999'" />
+            </div>
+
+            <div>
+                <label for="fname">What was  </label>
+                <input type="text" name="end_cust" placeholder="End Customer">
+            </div>
+
+            <div>
+                <label for="fname">What was  </label>
+                <input type="text" name="project_name" placeholder="Project Name">
+            </div>
+
+            <div>
+            <label for="fname">What was  </label>
+                <input type="text" name="work_type" placeholder="Work Type">
+            </div>
+
+            <div>
+            <label for="fname">What was  </label>
+                <input type="text" name="prime" placeholder="Prime">
+            </div>
+
+            <div>
+            <label for="fname">What was  </label>
+                <input type="text" name="category_type" placeholder="Category Type">
+            </div>
+            
+            <div>
+            <label for="fname">What was  </label>
+                <input type="text" name="zekiah_pm" placeholder="Zekiah PM">
+            </div>
+
+            <div>
+            <label for="fname">What was  </label>
+                <input type="text" name="team_members" placeholder="Team Members">
+            </div>
+
+            <div>
+                <label for="amount">Full Contract Start Date
+                    <br>
+                    <small>
+                        (Enter date as Month / Day / Year)
+                    </br>
+                    </small>
+                </label>
+                <input type="date" id="start_date" placeholder="Month / Day / Year" />
+            </div>
+
+            <div>
+            <label for="fname">What was  </label>
+                <input type="text" name="end_date" placeholder="Full Contract End Date">
+            </div>
+
+            <br><div>
+            <label for="fname">What was the full contract ceiling amount? </label></br>
+                <input type="text" name="contract_ceiling" placeholder="Full Contract Ceiling">
+               
+            </div>
+
+            <br><div>
+            <label for="fname">What was huh </label></br>
+                <input type="text" name="ceiling_remaining" placeholder="Full Contract Ceiling Remaining">
+            </div>
+
+            <label for="amount">Enter amount</label>
+            <div class="flex">
+                <span class="currency">$</span>
+                <input id="amount" name="amount" type="number" maxlength="15" />
+
+            </select>
+            <input type="Submit" value="Submit">
+    </div>
+</form>
+</div>
+</body>
+</html>
+
+
